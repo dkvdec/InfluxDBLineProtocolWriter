@@ -1,7 +1,7 @@
 case class InfluxDBRecord(
-							 uid: String,
+							 measurement: String,
 							 tags: Seq[(String,String)],
-							 value: Double,
+							 fields: Seq[(String, Int)],
 							 ts: Long
 						 ) {
 
@@ -11,5 +11,11 @@ case class InfluxDBRecord(
 		}.mkString(",")
 	}
 
-	lazy val line: String = s"${uid}${tagsStr} value=$value $ts"
+	private lazy val fieldStr = if (fields.isEmpty) "" else {
+		tags.sortBy(_._1).map { case (k,v) =>
+			s"$k=$v"
+		}.mkString(",")
+	}
+
+	lazy val line: String = s"${measurement}${tagsStr} ${fieldStr} $ts"
 }

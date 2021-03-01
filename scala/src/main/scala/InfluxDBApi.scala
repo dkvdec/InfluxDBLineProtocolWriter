@@ -5,12 +5,10 @@ import okhttp3.{Call, Callback, MediaType, OkHttpClient, Request, RequestBody, R
 
 class InfluxDBApi(log: Logger) {
 	private def conf = confParser.conf
-	private def dbConf: InfluxDBSettings = confParser.conf.dbConf
+	def dbConf: InfluxDBSettings
 
-	private def influxDbUrl =
-		dbConf.writeProto + "://" + dbConf.writeHostPort + dbConf.writeUrlPath
-
-	private val httpClient = new OkHttpClient()
+	private def influxDBUrl =
+		dbConf.writeProto + "://" + dbConf.writeHostPort + ":" + dbConf.writeUrlPath + "/write?db=" + dbConf.writeBucketName
 
 	def writeBatchAsync(batch: List[InfluxDBRecord]): Unit = {
 		if (!conf.writesEnabled){
