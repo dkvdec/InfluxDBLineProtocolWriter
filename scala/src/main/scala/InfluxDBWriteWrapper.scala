@@ -1,20 +1,18 @@
 import akka.actor.{Actor, ActorRef, Props}
-
 import scala.collection.mutable.ListBuffer
-import InfluxDBRecord;
 
-class InfluxDBWriterActor(log: Logger) extends Actor {
-	private def conf = confParser.conf
-	private def dbConf = confParser.conf.dbConf
+abstract class InfluxDBWriterActor() {
 
-	private val dbApi = new InfluxDBApi(confParser, log)
+	def dbConf: InfluxDBSettings
+	def dbWriter: InfluxDBLineProtocol
+
 	private val pending: ListBuffer[InfluxDBRecord] = ListBuffer[InfluxDBRecord]()
 	private var recordsSinceLastFlushMsg: Int = 0
 
 
 	private def addRecords(lst: List[InfluxDBRecord]): Unit = {
 		pending ++= lst
-		if (pending.size >= InfluxDBSettings.writeBatchSize){
+		if (pending.size >= dbConf.writeBatchSize){
 			flushRecords()
 		}
 	}
@@ -22,19 +20,11 @@ class InfluxDBWriterActor(log: Logger) extends Actor {
 	private def flushRecords(): Unit = {
 		val toWrite = pending.toList
 		recordsSinceLastFlushMsg += toWrite.size
-		if (toWrite.nonEmpty)
-			dbApi.writeBatchAsync(toWrite)
-		pending.clear()
-	}
-
-	override def receive: Receive = {
-		case WriteRecords(lst: List[InfluxDBRecord]) => addRecords(lst)
-		case FlushRecords() => {
-			flushRecords()
-			log.info(s"InfluxDbWriterActor - FlushRecords received - recordsSinceLastFlushMsg=$recordsSinceLastFlushMsg")
-			recordsSinceLastFlushMsg = 0
+		if (toWrite.nonEmpty) {
+			if (dbWriter.writeBatchAsync(toWrite)) {
+				pending.clear()
+			}
 		}
-		case x => log.error(s"InfluxDbWriterActor.receive: Unexpected message received: $x")
 	}
 }
 
