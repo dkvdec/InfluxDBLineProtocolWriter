@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4f6d4505-680e-4079-90dc-3c5c8d3b6f46" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/InfluxTest">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/InfluxTest">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="InfluxTest" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="InfluxTest" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1p87OgfmVYW0XE9Hs6P1lcDDwUv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Application.InfluxSender">
+    <configuration name="InfluxSender" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InfluxSender" />
+      <module name="InfluxTest.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InfluxTest [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/InfluxTest" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="InfluxTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/InfluxTest" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="gradlew" type="ShConfigurationType" temporary="true">
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/InfluxTest/gradlew" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/InfluxTest" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/usr/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.InfluxTest [dependencies]" />
+        <item itemvalue="Shell Script.gradlew" />
+        <item itemvalue="Gradle.InfluxTest" />
+        <item itemvalue="Application.InfluxSender" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4f6d4505-680e-4079-90dc-3c5c8d3b6f46" name="Default Changelist" comment="" />
+      <created>1614552832579</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614552832579</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="767" y="418" width="424" height="511" key="FileChooserDialogImpl" timestamp="1614573453176">
+      <screen x="59" y="150" width="1861" height="1053" />
+    </state>
+    <state x="767" y="418" width="424" height="511" key="FileChooserDialogImpl/59.150.1861.1053/1920.0.1920.1080@59.150.1861.1053" timestamp="1614573453176" />
+    <state width="1815" height="278" key="GridCell.Tab.0.bottom" timestamp="1614573327564">
+      <screen x="59" y="150" width="1861" height="1053" />
+    </state>
+    <state width="1815" height="278" key="GridCell.Tab.0.bottom/59.150.1861.1053/1920.0.1920.1080@59.150.1861.1053" timestamp="1614573327564" />
+    <state width="1815" height="278" key="GridCell.Tab.0.center" timestamp="1614573327564">
+      <screen x="59" y="150" width="1861" height="1053" />
+    </state>
+    <state width="1815" height="278" key="GridCell.Tab.0.center/59.150.1861.1053/1920.0.1920.1080@59.150.1861.1053" timestamp="1614573327564" />
+    <state width="1815" height="278" key="GridCell.Tab.0.left" timestamp="1614573327564">
+      <screen x="59" y="150" width="1861" height="1053" />
+    </state>
+    <state width="1815" height="278" key="GridCell.Tab.0.left/59.150.1861.1053/1920.0.1920.1080@59.150.1861.1053" timestamp="1614573327564" />
+    <state width="1815" height="278" key="GridCell.Tab.0.right" timestamp="1614573327564">
+      <screen x="59" y="150" width="1861" height="1053" />
+    </state>
+    <state width="1815" height="278" key="GridCell.Tab.0.right/59.150.1861.1053/1920.0.1920.1080@59.150.1861.1053" timestamp="1614573327564" />
+    <state x="722" y="437" width="524" height="476" key="extract.method.dialog" timestamp="1614555255235">
+      <screen x="59" y="150" width="1861" height="1053" />
+    </state>
+    <state x="722" y="437" width="524" height="476" key="extract.method.dialog/59.150.1861.1053/1920.0.1920.1080@59.150.1861.1053" timestamp="1614555255235" />
+    <state x="298" y="278" width="1372" height="794" key="new project wizard" timestamp="1614573476453">
+      <screen x="59" y="150" width="1861" height="1053" />
+    </state>
+    <state x="298" y="278" width="1372" height="794" key="new project wizard/59.150.1861.1053/1920.0.1920.1080@59.150.1861.1053" timestamp="1614573476453" />
+  </component>
+</project>
