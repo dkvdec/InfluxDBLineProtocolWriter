@@ -1,10 +1,11 @@
 import akka.actor.{Actor, ActorRef, Props}
 import scala.collection.mutable.ListBuffer
 
-abstract class InfluxDBWriterActor() {
+class InfluxDBWriteWrapper(ts: Long, mesurement: String, simulation: String, request: String,
+						   status: String, fields: (String, Int)*) {
 
-	def dbConf: InfluxDBSettings
-	def dbWriter: InfluxDBLineProtocol
+	val dbConf: InfluxDBSettings
+	def dbWriter: InfluxDBLineProtocol(pending)
 
 	private val pending: ListBuffer[InfluxDBRecord] = ListBuffer[InfluxDBRecord]()
 	private var recordsSinceLastFlushMsg: Int = 0
@@ -28,9 +29,10 @@ abstract class InfluxDBWriterActor() {
 	}
 }
 
-object InfluxDbWriterActor {
-	def props(log: Logger): Props =
-		Props(new InfluxDbWriterActor(log))
+object InfluxDBWriteWrapper {
+	def props(ts: Long, mesurement: String, simulation: String, request: String,
+			  status: String, fields: (String, Int)*): Props =
+		Props(new InfluxDBWriteWrapper(log))
 
 	case class WriteRecords(lst: List[InfluxDBRecord])
 	case class FlushRecords()

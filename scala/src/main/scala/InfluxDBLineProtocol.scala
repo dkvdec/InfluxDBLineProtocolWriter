@@ -4,9 +4,10 @@ import java.util.concurrent.TimeUnit
 import okhttp3.{Call, Callback, MediaType, OkHttpClient, Request, RequestBody, Response}
 import scalaj.http.{Http, HttpOptions}
 
-abstract class InfluxDBLineProtocol() {
-	def dbConf: InfluxDBSettings
+import scala.collection.mutable.ListBuffer
 
+class InfluxDBLineProtocol() {
+	val dbConf: InfluxDBSettings
 	private def influxDBUrl =
 		dbConf.writeProto + "://" + dbConf.writeHostPort + ":" + dbConf.writeUrlPath + "/write?db=" + dbConf.writeBucketName
 

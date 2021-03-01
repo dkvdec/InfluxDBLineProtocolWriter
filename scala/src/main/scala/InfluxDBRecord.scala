@@ -1,21 +1,23 @@
 case class InfluxDBRecord(
+							 ts: Long,
 							 measurement: String,
-							 tags: Seq[(String,String)],
-							 fields: Seq[(String, Int)],
-							 ts: Long
+							 simulation: String,
+							 request: String,
+							 status: String,
+							 fields: Seq[(String, Int)]
 						 ) {
 
-	private lazy val tagsStr = if (tags.isEmpty) "" else {
-		"," + tags.sortBy(_._1).map { case (k,v) =>
-			s"$k=${v.replaceAll("[\\s,]", "_")}"
-		}.mkString(",")
-	}
+//	private lazy val tagsStr = if (tags.isEmpty) "" else {
+//		"," + tags.sortBy(_._1).map { case (k,v) =>
+//			s"$k=${v.replaceAll("[\\s,]", "_")}"
+//		}.mkString(",")
+//	}
 
 	private lazy val fieldStr = if (fields.isEmpty) "" else {
-		tags.sortBy(_._1).map { case (k,v) =>
+		fields.sortBy(_._1).map { case (k,v) =>
 			s"$k=$v"
 		}.mkString(",")
 	}
 
-	lazy val line: String = s"${measurement}${tagsStr} ${fieldStr} $ts"
+	lazy val line: String = s"$measurement,simulation=$simulation,request=$request,status=$status ${fieldStr} $ts"
 }

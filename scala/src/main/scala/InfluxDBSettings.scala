@@ -1,7 +1,11 @@
+
+
 case class InfluxDBSettings(
-							   writeProto: String = "http",
-							   writeUrlPath: String = "localhost",
-							   writeHostPort: String = "8086",
-							   writeBucketName: String = "hamlet",
+							   writeProto: String,
+							   writeUrlPath: String,
+							   writeHostPort: String,
+							   writeBucketName: String,
 							   writeBatchSize: Int = 10
 						   )
+
+object InfluxDbPluginConf
