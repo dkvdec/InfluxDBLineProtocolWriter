@@ -14,7 +14,7 @@ object InfluxDBSettings{
 	val BatchSize = 5
 
 	def getUrl: String = {
-		Proto + "://" + HostPort + ":" + UrlPath + "/write?db=" + BucketName
+		Proto + "://" + UrlPath + ":" + HostPort + "/write?db=" + BucketName
 	}
 
 	def getBatchSize: Int = {

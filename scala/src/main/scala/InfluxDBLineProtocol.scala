@@ -11,16 +11,14 @@ class InfluxDBLineProtocol {
 }
 
 object InfluxDBLineProtocol {
-//	val influxDBUrl = InfluxDBSettings.getUrl
-	val influxDBUrl = "http://localhost:8086/write?db=hamlet"
+	val influxDBUrl = InfluxDBSettings.getUrl
 
 	def writeBatchAsync(batch: List[InfluxDBRecord]) : Boolean = {
 		val response = Http(influxDBUrl).postData(batch.map(_.line).mkString("\n"))
 			.header("Content-Type", "x-www-form-urlencoded")
 			.header("Charset", "UTF-8")
-			.option(HttpOptions.readTimeout(10000)).asString
-		println(response)
-		if (false)
+			.option(HttpOptions.readTimeout(10000)).asString.code
+		if (response > 299)
 		{
 			println(s"InfluxDbApi: Failed to write batch to InfluxDB $influxDBUrl batchSize=${batch.size}")
 			false
