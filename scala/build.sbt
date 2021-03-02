@@ -11,6 +11,7 @@ libraryDependencies ++= Seq(
   "ch.qos.logback" % "logback-classic" % "1.2.3",
   "com.squareup.okhttp3" % "okhttp" % "3.0.1",
   "org.scalaj" %% "scalaj-http" % "2.4.2",
+  "com.github.dwickern" %% "scala-nameof" % "3.0.0" % "provided",
   "com.typesafe.akka" %% "akka-actor-testkit-typed" % akkaVersion % Test,
   "org.scalatest" %% "scalatest" % "3.1.0" % Test
 )

@@ -1,3 +1,6 @@
+import java.lang.Character.getName
+import com.github.dwickern.macros.NameOf._
+
 import okhttp3.{Call, Callback, MediaType, OkHttpClient, Request, RequestBody, Response}
 import scalaj.http._
 
@@ -8,7 +11,13 @@ object TestSender {
 															   |gatling,request=testRequest code=130 1614586287438705250""".stripMargin)
 			.header("Content-Type", "x-www-form-urlencoded")
 			.header("Charset", "UTF-8")
-			.option(HttpOptions.readTimeout(500)).asString
-		result.code
+			.option(HttpOptions.readTimeout(10000)).asString
+
+		val min = 35
+		val mean = 45
+		val max = 55
+
+		val record = InfluxDBRecord("gatling","testSim", "testReq", "OK", (nameOf(min),min), (nameOf(mean),mean), (nameOf(max),max)).line
+		println(record)
 	}
 }

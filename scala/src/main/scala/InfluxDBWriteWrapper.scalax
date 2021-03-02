@@ -5,7 +5,7 @@ class InfluxDBWriteWrapper(ts: Long, mesurement: String, simulation: String, req
 						   status: String, fields: (String, Int)*) {
 
 	val dbConf: InfluxDBSettings
-	def dbWriter: InfluxDBLineProtocol(pending)
+	def dbWriter: InfluxDBLineProtocol(ListBuffer[InfluxDBRecord])
 
 	private val pending: ListBuffer[InfluxDBRecord] = ListBuffer[InfluxDBRecord]()
 	private var recordsSinceLastFlushMsg: Int = 0
