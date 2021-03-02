@@ -6,16 +6,21 @@ import scalaj.http.{Http, HttpOptions}
 
 import scala.collection.mutable.ListBuffer
 
-class InfluxDBLineProtocol() {
-	val dbConf: InfluxDBSettings
-	private def influxDBUrl =
-		dbConf.writeProto + "://" + dbConf.writeHostPort + ":" + dbConf.writeUrlPath + "/write?db=" + dbConf.writeBucketName
+class InfluxDBLineProtocol {
+
+}
+
+object InfluxDBLineProtocol {
+//	val influxDBUrl = InfluxDBSettings.getUrl
+	val influxDBUrl = "http://localhost:8086/write?db=hamlet"
 
 	def writeBatchAsync(batch: List[InfluxDBRecord]) : Boolean = {
-		if (Http(influxDBUrl).postData(batch.mkString("\n"))
+		val response = Http(influxDBUrl).postData(batch.map(_.line).mkString("\n"))
 			.header("Content-Type", "x-www-form-urlencoded")
 			.header("Charset", "UTF-8")
-			.option(HttpOptions.readTimeout(500)).asString.code > 299)
+			.option(HttpOptions.readTimeout(10000)).asString
+		println(response)
+		if (false)
 		{
 			println(s"InfluxDbApi: Failed to write batch to InfluxDB $influxDBUrl batchSize=${batch.size}")
 			false

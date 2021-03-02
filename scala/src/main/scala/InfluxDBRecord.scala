@@ -20,6 +20,6 @@ case class InfluxDBRecord(
 		}.mkString(",")
 	}
 
-	lazy val line: String = s"$measurement,simulation=$simulation,request=$request,status=$status ${fieldStr} ${System.currentTimeMillis}"
-	println(line)
+	lazy val line: String = s"$measurement,simulation=$simulation,request=$request,status=$status ${fieldStr} ${System.currentTimeMillis()}"
+//	println(line)
 }
